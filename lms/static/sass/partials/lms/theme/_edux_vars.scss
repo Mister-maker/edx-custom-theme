@@ -5,6 +5,11 @@ $primary: #00b06d;
 
 .jumbotron{
     background-color: $primary;
-    color: #fff !important;
     min-height: 300px;
+    display: grid;
+    place-items: center;
+
+    h1{
+        color: #fff !important;
+    }
 }

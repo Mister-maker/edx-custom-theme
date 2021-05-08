@@ -2,3 +2,9 @@ $primary: #00b06d;
 // .mdb-footer{
 //     display:none;
 // }
+
+.jumbotron{
+    background-color: $primary;
+    color: #fff !important;
+    min-height: 300px;
+}

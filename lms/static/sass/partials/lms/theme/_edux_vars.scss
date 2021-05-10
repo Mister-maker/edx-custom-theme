@@ -1,3 +1,6 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
 // Base Styling 
 
 $primary: #00b06d;
@@ -7,6 +10,7 @@ $primary: #00b06d;
 
 body,html{
     overflow-x: hidden !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .container {
@@ -32,6 +36,7 @@ body,html{
 .carousel-control-next, .carousel-control-prev{
     &:hover{
         background-color: rgba(0, 0, 0, 0.2) !important;
+        background-image: none !important;
     }
 }
 
@@ -85,5 +90,27 @@ body,html{
         background-color: darken(#00b06d, 10%) !important;
         background-image: none !important;
         background-image: none !important;
+    }
+}
+
+
+// Courses section
+
+.courses{
+    margin-top: 100px !important;
+}
+
+.course{
+    padding: 1.2rem !important;
+    box-shadow: 0 4px 10px 0 rgba(0,0,0, 0.2) !important;
+}
+
+.course-name{
+    margin: 20px 0 !important;
+}
+
+.course-name{
+    &:hover{
+        text-decoration: none;
     }
 }

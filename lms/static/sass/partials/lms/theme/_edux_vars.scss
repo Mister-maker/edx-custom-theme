@@ -13,6 +13,10 @@ body,html{
     padding: 0 !important
 }
 
+.container-fluid{
+    padding: 0 !important
+}
+
 .jumbotron{
     background-color: $primary;
     min-height: 300px;
@@ -23,6 +27,16 @@ body,html{
         color: #fff !important;
     }
 }
+
+
+.carousel-control-next, .carousel-control-prev:hover{
+    background-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+.carousel-control-next, .carousel-control-prev:hover{
+    box-shadow: none !important;
+}
+
 
 
 

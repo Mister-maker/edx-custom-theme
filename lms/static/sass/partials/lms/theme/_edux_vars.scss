@@ -17,9 +17,6 @@ body,html{
     padding: 0 !important
 }
 
-.container-fluid{
-    padding: 0 !important
-}
 
 .jumbotron{
     background-color: $primary;
@@ -97,16 +94,22 @@ body,html{
 // Courses section
 
 .courses{
-    margin-top: 100px !important;
+    margin-top: 60px !important;
+    margin-bottom: 60px !important;
 }
 
 .course{
     padding: 1.2rem !important;
     box-shadow: 0 4px 10px 0 rgba(0,0,0, 0.2) !important;
+    border-radius: 4px;
+    margin-top: 40px;
+    line-height: 1.4;
+
 }
 
 .course-name{
     margin: 20px 0 !important;
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .course-name{

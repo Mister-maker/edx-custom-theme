@@ -29,11 +29,13 @@ body,html{
 }
 
 
-.carousel-control-next, .carousel-control-prev:hover{
-    background-color: rgba(0, 0, 0, 0.3) !important;
+.carousel-control-next, .carousel-control-prev{
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.2) !important;
+    }
 }
 
-.carousel-control-next, .carousel-control-prev:hover{
+.carousel-control-next, .carousel-control-prev:focus{
     box-shadow: none !important;
 }
 

@@ -2,17 +2,71 @@
 <%namespace name='static' file='static_content.html'/>
 <%! from django.utils.translation import ugettext as _ %>
 
+<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+<style>
+      .swiper-container {
+        width: 100%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .swiper-slide {
+        background-position: center;
+        background-size: cover;
+        width: 300px;
+        height: 300px;
+      }
+
+      .swiper-slide img {
+        display: block;
+        width: 100%;
+      }
+</style>
+
 <section class="container">
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
       <section class="courses">
         <div class="row">
           ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
           %for course in courses[:homepage_course_max]:
-            <div class="col-md-3 col-sm-2">
+            <div class="col-md-3 col-sm-6">
                 <%include file="course.html" args="course=course" />
             </div>
           %endfor
         </div>
+
+        <div class="swiper-container mySwiper">
+          <div class="swiper-wrapper">
+            %for course in courses[:homepage_course_max]:
+              <div class="swiper-slide">
+                <%include file="course.html" args="course=course" />
+              </div>
+            %endfor
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+          <!-- Swiper JS -->
+          <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+          <!-- Initialize Swiper -->
+          <script>
+            var swiper = new Swiper(".mySwiper", {
+              effect: "coverflow",
+              grabCursor: true,
+              centeredSlides: true,
+              slidesPerView: "auto",
+              coverflowEffect: {
+                rotate: 50,
+                stretch: 0,
+                depth: 100,
+                modifier: 1,
+                slideShadows: true,
+              },
+              pagination: {
+                el: ".swiper-pagination",
+              },
+            });
+          </script>
 
         
       </section>

@@ -46,12 +46,10 @@
           <div class="swiper-container mySwiper">
             <div class="swiper-wrapper">
               %for course in courses[:homepage_course_max]:
-                %if course.display_number_with_default:
-                  <h1>${course.display_number_with_default}</h1>
+                  <h1>${course.display_number_with_default.split("_", 1)[0]}</h1>
                   <div class="swiper-slide">
                     <%include file="course.html" args="course=course" />
                   </div>
-                %endif
               %endfor
             </div>
             <!-- <div class="swiper-button-next"></div>

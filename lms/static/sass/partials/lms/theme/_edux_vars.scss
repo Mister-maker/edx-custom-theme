@@ -75,7 +75,7 @@ body,html{
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart {
     border: none !important;
     border-radius: 5px;
-    box-shadow: 0 0 4px rgb(0 0 0 / 40%);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     font-weight: bold;
     background-color: $primary;
     background-image: none !important;
@@ -97,7 +97,7 @@ body,html{
 input[type="submit"], input[type="button"], button, .button {
     border: none !important;
     border-radius: 5px;
-    box-shadow: 0 0 4px rgb(0 0 0 / 40%);
+    box-shadow: rgba(0, 0, 0, 0.4);
     font-weight: bold;
     background-color: $primary;
     background-image: none !important;

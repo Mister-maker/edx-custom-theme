@@ -3,37 +3,67 @@
 <%! from django.utils.translation import ugettext as _ %>
 
 <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
-<style>
-      .swiper-container {
-        width: 100%;
-        padding-top: 50px;
-        padding-bottom: 50px;
-      }
+    <!-- Demo styles -->
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
 
-      .swiper-slide {
-        background-position: center;
-        background-size: cover;
-        width: 300px;
-        height: 300px;
-      }
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
 
-      .swiper-slide img {
-        display: block;
-        width: 100%;
-      }
-</style>
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
 
 <section class="container">
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
       <section class="courses">
-        <div class="row">
+        <!-- <div class="row">
           ## limiting the course number by using HOMEPAGE_COURSE_MAX as the maximum number of courses
           %for course in courses[:homepage_course_max]:
             <div class="col-md-3 col-sm-6">
                 <%include file="course.html" args="course=course" />
             </div>
           %endfor
-        </div>
+        </div> -->
 
         <div class="swiper-container mySwiper">
           <div class="swiper-wrapper">
@@ -43,27 +73,29 @@
               </div>
             %endfor
           </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
           <div class="swiper-pagination"></div>
         </div>
 
           <!-- Swiper JS -->
           <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
           <!-- Initialize Swiper -->
-          <script>
+           <!-- Initialize Swiper -->
+           <script>
             var swiper = new Swiper(".mySwiper", {
-              effect: "coverflow",
-              grabCursor: true,
-              centeredSlides: true,
-              slidesPerView: "auto",
-              coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 100,
-                modifier: 1,
-                slideShadows: true,
-              },
+              slidesPerView: 3,
+              spaceBetween: 30,
+              slidesPerGroup: 3,
+              loop: true,
+              loopFillGroupWithBlank: true,
               pagination: {
                 el: ".swiper-pagination",
+                clickable: true,
+              },
+              navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
               },
             });
           </script>

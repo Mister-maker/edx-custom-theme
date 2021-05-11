@@ -41,8 +41,7 @@
 <section class="container">
     % if settings.FEATURES.get('COURSES_ARE_BROWSABLE'):
       <section class="courses">
-    
-        <div class="container">
+  
           <div class="swiper-container mySwiper">
             <div class="swiper-wrapper">
               %for course in courses[:homepage_course_max]:
@@ -55,7 +54,6 @@
             <div class="swiper-button-prev"></div> -->
             <div class="swiper-pagination"></div>
           </div>
-        </div>
 
           <!-- Swiper JS -->
           <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
@@ -81,11 +79,11 @@
               },
               768: {
                 slidesPerView: 3,
-                spaceBetween: 40,
+                spaceBetween: 30,
               },
               1024: {
                 slidesPerView: 4,
-                spaceBetween: 50,
+                spaceBetween: 40,
               },
             },
             navigation: {

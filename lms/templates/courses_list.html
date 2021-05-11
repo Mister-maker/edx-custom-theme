@@ -45,11 +45,14 @@
   
           <div class="swiper-container mySwiper">
             <div class="swiper-wrapper">
+
               %for course in courses[:homepage_course_max]:
                   <h1>${course.display_number_with_default.split("_", 1)[0]}</h1>
                   <div class="swiper-slide">
                     <%include file="course.html" args="course=course" />
                   </div>
+
+                  
               %endfor
             </div>
             <!-- <div class="swiper-button-next"></div>
@@ -57,10 +60,50 @@
             <div class="swiper-pagination"></div>
           </div>
 
+          <div class="row">
+            <div class="col-md-12">
+              <button class="cat-all">All Categories</button>
+              <button class="cat-1">Design</button>
+              <button class="cat-2">Software</button>
+              <!-- <button class="cat-3">Backend</button> -->
+            </div>
+          </div>
+          <div class="row">
+            %for course in courses[:homepage_course_max]:      
+              <div class="col-md-6 col-sm-6 ${course.display_number_with_default.split('_', 1)[0]}">
+                <%include file="course.html" args="course=course" />
+              </div>
+            %endfor
+          </div>
+
+          <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
           <!-- Swiper JS -->
           <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
           <!-- Initialize Swiper -->
            <!-- Initialize Swiper -->
+
+           <script>          
+              $(document).ready(function(){
+                var activeCat = "";
+                function filterGroup(group){
+                  if(activeCat != group){
+                    $("div").filter("."+group).show();
+                    $("div").filter(":not(."+group+")").hide();
+                    activeCat = group;
+                  }
+                }
+                
+                $(".cat-all").click(function(){
+                  $("div").show();
+                  activeCat = "all";
+                });
+
+
+                $(".cat-1").click(function(){ filterGroup("fdp"); });
+                $(".cat-2").click(function(){ filterGroup("stc"); });
+                // $(".cat-3").click(function(){ filterGroup("ppe"); });
+              });
+           </script>
 
         <script>
           var swiper = new Swiper(".mySwiper", {

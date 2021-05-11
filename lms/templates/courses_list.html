@@ -65,22 +65,18 @@
               <button class="cat-all">All Categories</button>
               <button class="cat-1">Design</button>
               <button class="cat-2">Software</button>
-              <!-- <button class="cat-3">Backend</button> -->
+              <button class="cat-3">Backend</button>
             </div>
           </div>
           <div class="row">
             %for course in courses[:homepage_course_max]:      
-              <div class="col-md-6 col-sm-6 ${course.display_number_with_default.split('_', 1)[0]}">
+              <div class="col-md-3 col-sm-6">
                 <%include file="course.html" args="course=course" />
               </div>
             %endfor
           </div>
 
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-          <!-- Swiper JS -->
-          <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-          <!-- Initialize Swiper -->
-           <!-- Initialize Swiper -->
 
            <script>          
               $(document).ready(function(){
@@ -99,44 +95,13 @@
                 });
 
 
-                $(".cat-1").click(function(){ filterGroup("fdp"); });
-                $(".cat-2").click(function(){ filterGroup("stc"); });
-                // $(".cat-3").click(function(){ filterGroup("ppe"); });
+                $(".cat-1").click(function(){ filterGroup("STC"); });
+                $(".cat-2").click(function(){ filterGroup("fdp"); });
+                $(".cat-3").click(function(){ filterGroup("MT"); });
               });
            </script>
 
-        <script>
-          var swiper = new Swiper(".mySwiper", {
-            slidesPerView: 1,
-            spaceBetween: 30,
-            pagination: {
-              el: ".swiper-pagination",
-              clickable: true,
-            },
-            autoplay: {
-              delay: 2500,
-              disableOnInteraction: false,
-            },
-            breakpoints: {
-              640: {
-                slidesPerView: 2,
-                spaceBetween: 20,
-              },
-              768: {
-                slidesPerView: 3,
-                spaceBetween: 30,
-              },
-              1024: {
-                slidesPerView: 4,
-                spaceBetween: 40,
-              },
-            },
-            navigation: {
-                nextEl: ".swiper-button-next",
-                prevEl: ".swiper-button-prev",
-            },
-          });
-        </script>
+     
         
       </section>
     ## in case there are courses that are not shown on the homepage, a 'View all Courses' link should appear

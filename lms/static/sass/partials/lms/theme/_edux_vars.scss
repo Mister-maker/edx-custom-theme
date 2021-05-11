@@ -17,6 +17,10 @@ body,html{
     padding: 0 40px !important
 }
 
+.container-fluid{
+    padding: 0 0 !important;
+}
+
 
 .jumbotron{
     background-color: $primary;
@@ -128,7 +132,6 @@ a,p,h1,h2,h3,h4,ul {
 .section-services {
 	padding-top: 110px;
 	padding-bottom: 120px;
-	font-family: "Poppins", sans-serif;
 	background-color: #211f24;
 	color: #fff;
 }
@@ -142,7 +145,10 @@ a,p,h1,h2,h3,h4,ul {
 	margin-bottom: 40px;
 	padding-bottom: 25px;
 	text-transform: uppercase;
-	font-weight: 700;
+	font-weight: bold;
+    font-size: 2.2rem;
+    letter-spacing: 3px;
+    font-family: inherit;
 }
 
 .section-services .header-section .title:before {
@@ -173,6 +179,9 @@ a,p,h1,h2,h3,h4,ul {
 
 .section-services .header-section .description {
 	color: #6f6f71;
+    font-weight: bold;
+    font-size: 1.1rem;
+    font-family: inherit;
 }
 
 .section-services .single-service {
@@ -197,6 +206,7 @@ a,p,h1,h2,h3,h4,ul {
 	font-weight: 700;
 	letter-spacing: 0.02em;
 	line-height: 1.8em;
+    letter-spacing: 1.5px;
 }
 
 .section-services .single-service .part-2 {
@@ -205,9 +215,10 @@ a,p,h1,h2,h3,h4,ul {
 
 .section-services .single-service .part-2 .description {
 	margin-bottom: 22px;
-	color: #6f6f71;
-	font-size: 14px;
-	line-height: 1.8em;
+	color: #888888;
+    font-size: 1.1rem;
+    line-height: 1.6em;
+    font-family: inherit;
 }
 
 .section-services .single-service .part-2 a {
@@ -329,7 +340,7 @@ a {
  color:#5867dd
 }
 .mini-footer p a:hover {
- color:#34bfa3
+ color: $primary;
 }
 .widget-about img {
  display:block;

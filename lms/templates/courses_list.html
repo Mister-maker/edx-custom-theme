@@ -50,9 +50,9 @@
               <button class="cat-3 register">Backend</button>
             </div>
           </div>
-          <div class="row">
+          <div class="row mt-3">
             %for course in courses[:homepage_course_max]:      
-              <div class="col-md-3 col-sm-6">
+              <div class="col-md-3 col-sm-6 mb-4">
                 <%include file="course.html" args="course=course" />
               </div>
             %endfor

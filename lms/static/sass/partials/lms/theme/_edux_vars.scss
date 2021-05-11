@@ -3,7 +3,7 @@
 
 // Base Styling 
 
-$primary: #00b06d;
+$primary: $primary;
 // .mdb-footer{
 //     display:none;
 // }
@@ -77,7 +77,7 @@ body,html{
     border-radius: 5px;
     box-shadow: none;
     font-weight: bold;
-    background-color: #00b06d;
+    background-color: $primary;
     background-image: none !important;
     background-image: none !important;
     text-shadow:none !important;
@@ -88,7 +88,28 @@ body,html{
 .course-info header.course-profile .intro-inner-wrapper .intro .main-cta>a.find-courses, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.register, .course-info header.course-profile .intro-inner-wrapper .intro .main-cta a.add-to-cart {
     &:hover{
         transition: 300ms ease !important;
-        background-color: darken(#00b06d, 10%) !important;
+        background-color: darken($primary, 10%) !important;
+        background-image: none !important;
+        background-image: none !important;
+    }
+}
+
+input[type="submit"], input[type="button"], button, .button {
+    border: none !important;
+    border-radius: 5px;
+    box-shadow: none;
+    font-weight: bold;
+    background-color: $primary;
+    background-image: none !important;
+    background-image: none !important;
+    text-shadow:none !important;
+    width: 48.82117%;
+}
+
+input[type="submit"], input[type="button"], button, .button {
+    &:hover{
+        transition: 300ms ease !important;
+        background-color: darken($primary, 10%) !important;
         background-image: none !important;
         background-image: none !important;
     }

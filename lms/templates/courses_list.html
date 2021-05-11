@@ -83,14 +83,14 @@
                 var activeCat = "";
                 function filterGroup(group){
                   if(activeCat != group){
-                    $("div").filter("."+group).show();
-                    $("div").filter(":not(."+group+")").hide();
+                    $(".course").filter("."+group).show();
+                    $(".course").filter(":not(."+group+")").hide();
                     activeCat = group;
                   }
                 }
                 
                 $(".cat-all").click(function(){
-                  $("div").show();
+                  $(".course").show();
                   activeCat = "all";
                 });
 

@@ -51,8 +51,8 @@
                 </div>
               %endfor
             </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
+            <!-- <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div> -->
             <div class="swiper-pagination"></div>
           </div>
         </div>
@@ -69,6 +69,10 @@
             pagination: {
               el: ".swiper-pagination",
               clickable: true,
+            },
+            autoplay: {
+              delay: 2500,
+              disableOnInteraction: false,
             },
             breakpoints: {
               640: {

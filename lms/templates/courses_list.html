@@ -54,7 +54,7 @@
           </div>
           <div class="row mt-3">
             %for course in courses[:homepage_course_max]:      
-              <div class="col-md-3 col-sm-6 mb-4">
+              <div class="col-md-3 col-sm-6 mb-4" filter-value="${course.display_name_with_default.replace(' ', '')}">
                 <%include file="course.html" args="course=course" />
               </div>  
             %endfor

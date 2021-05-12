@@ -38,6 +38,10 @@ body,html{
 }
 
 
+.global-header .header-logo a {
+    margin-left: 0 !important;
+}
+
 .carousel-control-next, .carousel-control-prev{
     &:hover{
         background-color: rgba(0, 0, 0, 0.2) !important;
@@ -47,6 +51,10 @@ body,html{
 
 .carousel-control-next, .carousel-control-prev:focus{
     box-shadow: none !important;
+}
+
+.find-courses{
+    background-color: none !important;
 }
 
 

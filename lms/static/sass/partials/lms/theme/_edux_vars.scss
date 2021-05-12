@@ -123,6 +123,30 @@ input[type="submit"], input[type="button"], button, .button {
     }
 }
 
+// Courser card Styling
+.card-titles{
+    .course-organization{
+        display: inline-block;
+        padding: .5rem;
+        font-size: 0.8rem;
+        background-color: $primary;
+        color: #fff;
+        border-radius: 50%;
+    }
+    .course-code{
+        color: #707070;
+        font-size: .875rem;
+        font-weight: 300;
+    }
+    .course-title{
+        font-size: 1.25rem;
+        color: #454545;
+        font-weight: 500;
+        line-height: 1.15;
+        margin: 1rem 0;
+    }
+}
+
 
 // Courses section
 

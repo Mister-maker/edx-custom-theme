@@ -20,6 +20,14 @@ from six import text_type
         <span class="course-code">${course.display_number_with_default.replace('_', ' ')}</span>
         <span class="course-title user-data">${course.display_name_with_default}</span>
       </h2>
+
+      <div class="card-titles">
+        <span class="course-organization">
+          ${course.display_org_with_default.replace('_', ' ')}
+        </span>
+        <h2 class="course-title user-data">${course.display_name_with_default}</h2>
+        <span class="course-code">${course.display_number_with_default.replace('_', ' ')}</span>
+      </div>
       <%
       if course.start is not None:
           course_date_string = course.start.strftime('%Y-%m-%dT%H:%M:%S%z')

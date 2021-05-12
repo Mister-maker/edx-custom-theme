@@ -57,6 +57,9 @@
               <div class="col-md-3 col-sm-6 mb-4">
                 <%include file="course.html" args="course=course" />
               </div>
+              <div class="col-md-3 col-sm-6 mb-4" id="nothing" style="display: none;">
+                <h1>Nothing Found Here</h1>
+              </div>
             %endfor
           </div>
 
@@ -108,7 +111,10 @@
                   filterItems[i].style.display = 'none';
 
                   if(filterItems[i].getAttribute('filter-value').indexOf(searchVal) >= 0) {
-                    filterItems[i].style.display = displayArr[i];		
+                    filterItems[i].style.display = displayArr[i];
+                    document.getElementById("nothing").style.display = "none";
+                  }else{
+                    document.getElementById("nothing").style.display = "block";
                   }
                 }
                 

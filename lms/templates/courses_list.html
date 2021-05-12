@@ -123,7 +123,7 @@
                   usersData = document.querySelectorAll('.user-data'),
                   searchVal;
 
-              searchUsers.addEventListener('keydown', function() {
+              searchUsers.addEventListener('keyup', function() {
                 searchVal = this.value.toLowerCase();
                 
                 for (var i = 0; i < users.length; i++) {

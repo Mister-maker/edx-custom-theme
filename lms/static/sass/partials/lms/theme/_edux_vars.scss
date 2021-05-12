@@ -125,13 +125,14 @@ input[type="submit"], input[type="button"], button, .button {
 
 // Courser card Styling
 .card-titles{
+    margin: 1rem 0;
     .course-organization{
         display: inline-block;
-        padding: .5rem;
-        font-size: 0.8rem;
-        background-color: $primary;
+        padding: .7rem 1rem;
+        font-size: 0.7rem;
+        border: 2px solid $primary;
         color: #fff;
-        border-radius: 50%;
+        border-radius: 30px;
     }
     .course-code{
         color: #707070;
@@ -143,7 +144,9 @@ input[type="submit"], input[type="button"], button, .button {
         color: #454545;
         font-weight: 500;
         line-height: 1.15;
-        margin: 1rem 0;
+        margin-top: 1rem;
+        margin-bottom: 5px;
+        font-family: inherit;
     }
 }
 

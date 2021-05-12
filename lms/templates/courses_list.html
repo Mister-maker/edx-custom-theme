@@ -56,11 +56,11 @@
             %for course in courses[:homepage_course_max]:      
               <div class="col-md-3 col-sm-6 mb-4">
                 <%include file="course.html" args="course=course" />
-              </div>
-              <div class="col-md-3 col-sm-6 mb-4" id="nothing" style="display: none;">
-                <h1>Nothing Found Here</h1>
-              </div>
+              </div>  
             %endfor
+            <div class="col-md-3 col-sm-6 mb-4" id="nothing" style="display: none;">
+              <h1>Nothing Found Here</h1>
+            </div>
           </div>
 
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

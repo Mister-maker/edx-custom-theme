@@ -58,9 +58,11 @@
                 <%include file="course.html" args="course=course" />
               </div>  
             %endfor
+
             <div class="col-md-3 col-sm-6 mb-4" id="nothing" style="display: none;">
-              <h1>Nothing Found Here</h1>
-            </div>
+              <h1>Nothing Found</h1>
+            </div> 
+
           </div>
 
           <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
@@ -109,12 +111,11 @@
                   }
 
                   filterItems[i].style.display = 'none';
-                  document.getElementById("nothing").style.display = "none";
+                  document.getElementById("nothing").style.display = "block";
 
                   if(filterItems[i].getAttribute('filter-value').indexOf(searchVal) >= 0) {
                     filterItems[i].style.display = displayArr[i];  
-                  }else{
-                    document.getElementById("nothing").style.display = "block";
+                    document.getElementById("nothing").style.display = "none";
                   }
                 }
                 

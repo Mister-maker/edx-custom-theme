@@ -21,6 +21,10 @@ body,html{
     padding: 0 0 !important;
 }
 
+#main{
+    max-width: 1320px !important;
+    margin: 0 auto !important;
+}
 
 .jumbotron{
     background-color: $primary;

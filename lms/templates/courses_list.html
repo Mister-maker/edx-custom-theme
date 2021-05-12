@@ -48,6 +48,8 @@
               <button class="cat-1 register" style="width: 200px; padding: 0.5rem 1rem;">Design</button>
               <button class="cat-2 register" style="width: 200px; padding: 0.5rem 1rem;">Software</button>
               <button class="cat-3 register" style="width: 200px; padding: 0.5rem 1rem;">Backend</button>
+
+              <input type="text" id="filter-search" />
             </div>
           </div>
           <div class="row mt-3">
@@ -81,6 +83,37 @@
                 $(".cat-2").click(function(){ filterGroup("fdp"); });
                 $(".cat-3").click(function(){ filterGroup("MT"); });
               });
+           </script>
+
+           <script>
+              var inputId 	= 'filter-search';
+              var itemsData 	= 'filter-value';
+              var displaySet = false;
+              var displayArr = [];
+
+              function getDisplayType(element) {
+                var elementStyle = element.currentStyle || window.getComputedStyle(element, "");
+                return elementStyle.display;
+              }
+
+              document.getElementById(inputId).onkeyup = function() {
+                var searchVal = this.value.toLowerCase();
+                var filterItems = document.querySelectorAll('[' + itemsData + ']');
+
+                for(var i = 0; i < filterItems.length; i++) {
+                  if (!displaySet) {
+                    displayArr.push(getDisplayType(filterItems[i]));
+                  }
+
+                  filterItems[i].style.display = 'none';
+
+                  if(filterItems[i].getAttribute('filter-value').indexOf(searchVal) >= 0) {
+                    filterItems[i].style.display = displayArr[i];		
+                  }
+                }
+                
+                displaySet = true;
+              }
            </script>
 
      

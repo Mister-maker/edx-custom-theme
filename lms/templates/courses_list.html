@@ -109,10 +109,10 @@
                   }
 
                   filterItems[i].style.display = 'none';
+                  document.getElementById("nothing").style.display = "none";
 
                   if(filterItems[i].getAttribute('filter-value').indexOf(searchVal) >= 0) {
-                    filterItems[i].style.display = displayArr[i];
-                    document.getElementById("nothing").style.display = "none";
+                    filterItems[i].style.display = displayArr[i];  
                   }else{
                     document.getElementById("nothing").style.display = "block";
                   }

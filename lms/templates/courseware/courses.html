@@ -30,6 +30,64 @@
 
 <%block name="pagetitle">${_("Courses")}</%block>
 
+<style>
+
+    .course{
+        border: none;
+        border-radius: 5px;
+    }
+    .courses-container .courses .course {
+        position: relative;
+        border-bottom: none;
+        box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2)!important;
+        width: 100%;
+    }
+
+    .courses-container .courses .course .course-info {
+        height: 100%;
+        font-family: inherit;
+        font-weight: 700;
+    }
+
+    .courses-container .courses .course .course-info .course-organization {
+        padding: .3rem 1rem .3rem 1rem;
+        font-size: 0.7rem;
+        border: 2px solid #00b06d;
+        color: #000000;
+        border-radius: 30px;
+        display: inline-block;
+    }
+
+    .courses-container .courses .course .course-info .course-title {
+        margin: 1rem 0 5px 0; 
+        padding: 0 0; 
+        height: 100%; 
+        color: #454545; 
+    }
+
+    .courses-container .courses .course .course-info .course-code {
+        padding: 0 0;
+    }
+
+    .courses-container .courses .course .course-info .course-date {
+        font-weight: 400;
+        color: #ff6a6a;
+        padding: 2px 0px;
+    }
+
+    .courses-container .courses .course .course-image .cover-image {
+        height: 100% !important;
+    }
+
+    .courses-container .courses .course .course-image .cover-image::before {
+        content: none !important;
+    }
+</style>
+
+<div class="container-fluid text-center">
+    <h2>Our Courses</h2>
+</div>
+
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="find-courses">
       <section class="courses-container">

@@ -46,7 +46,7 @@
     .courses-container .courses .course .course-info {
         height: 100%;
         font-family: inherit;
-        font-weight: bold !important;
+        
     }
 
     .courses-container .courses .course .course-info .course-organization {
@@ -63,6 +63,7 @@
         padding: 0 0; 
         height: 100%; 
         color: #454545; 
+        font-weight: bold;
     }
 
     .courses-container .courses .course .course-info .course-code {
@@ -93,7 +94,7 @@
         box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2)!important;
     }
 
-    .highlighted-courses .courses .course:hover, .highlighted-courses .courses .course:focus, .find-courses .courses .course:hover .course-organization{
+    .highlighted-courses .courses .course:hover, .highlighted-courses .courses .course:focus, .find-courses .courses .course:hover .course-title{
         color: #ff6a6a !important;
     }
 </style>
@@ -128,9 +129,9 @@
         % endif
 
         <div class="courses${'' if course_discovery_enabled else ' no-course-discovery'}" role="region" aria-label="${_('List of Courses')}">
-          <div class="courses-listing row">
+          <div class="row">
             %for course in courses:
-            <div class="courses-listing-item col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6">
               <%include file="../course.html" args="course=course" />
             </div>
             %endfor

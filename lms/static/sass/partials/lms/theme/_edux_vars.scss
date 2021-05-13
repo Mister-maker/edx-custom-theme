@@ -74,15 +74,18 @@ body,html{
 }
 
 .carousel-control-next, .carousel-control-prev{
+    border: none !important;
     &:hover{
         background-color: rgba(0, 0, 0, 0.2) !important;
         background-image: none !important;
     }
+
+    &:focus{
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
 }
 
-.carousel-control-next, .carousel-control-prev:focus{
-    box-shadow: none !important;
-}
 
 .find-courses{
     background: none !important;

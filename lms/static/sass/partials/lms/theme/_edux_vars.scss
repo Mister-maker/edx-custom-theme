@@ -39,11 +39,17 @@ body,html{
     }
 }
 
+.nav-item{
+    margin-right: 1rem !important;
+}
+
 .nav-link {
-    color: $primary !important;
+    color: #000 !important;
     border: 2px solid $primary !important;
-    border-radius: 30px !important;
+    border-radius: 4px !important;
     width: 100%;
+    font-size: 1rem !important;
+    padding: 8px 20px !important;
 }
 
 .nav-pills .nav-link.active, .nav-pills .show>.nav-link {

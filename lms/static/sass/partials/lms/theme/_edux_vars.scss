@@ -165,7 +165,7 @@ body,html{
     background-image: none !important;
     text-shadow:none !important;
     width: 48.82117%;
-    color: $primary !important;
+    color: #000 !important;
 }
 
 
@@ -176,7 +176,6 @@ body,html{
         background-color: $primary !important;
         background-image: none !important;
         background-image: none !important;
-        color: #000;
     }
 }
 
@@ -192,7 +191,7 @@ input[type="submit"], input[type="button"], button, .button {
     background-image: none !important;
     text-shadow:none !important;
     width: 48.82117%;
-    color: $primary !important;
+    color: #000 !important;
 
 }
 
@@ -203,7 +202,6 @@ input[type="submit"], input[type="button"], button, .button {
         background-color: $primary !important;
         background-image: none !important;
         background-image: none !important;
-        color: #000;
     }
 
     &:focus{
@@ -212,7 +210,7 @@ input[type="submit"], input[type="button"], button, .button {
         // background-color: darken($primary, 10%) !important;
         background-image: none !important;
         background-image: none !important;
-        color: #000;
+        color: $primary !important;
     }
 }
 

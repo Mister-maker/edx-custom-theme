@@ -73,7 +73,20 @@ body,html{
     margin-left: 0 !important;
 }
 
-.carousel-control-next, .carousel-control-prev{
+.carousel-control-prev{
+    border: none !important;
+    &:hover{
+        background-color: rgba(0, 0, 0, 0.2) !important;
+        background-image: none !important;
+    }
+
+    &:focus{
+        background-color: transparent !important;
+        box-shadow: none !important;
+    }
+}
+
+.carousel-control-next{
     border: none !important;
     &:hover{
         background-color: rgba(0, 0, 0, 0.2) !important;
@@ -146,12 +159,13 @@ body,html{
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.4);
     font-weight: bold;
     background: none;
-    border: 2px solid $primary;
+    border: 2px solid $primary !important;
     background-color: transparent !important;
     background-image: none !important;
     background-image: none !important;
     text-shadow:none !important;
     width: 48.82117%;
+    color: $primary !important;
 }
 
 
@@ -177,6 +191,7 @@ input[type="submit"], input[type="button"], button, .button {
     background-image: none !important;
     text-shadow:none !important;
     width: 48.82117%;
+    color: $primary !important;
 
 }
 
@@ -284,7 +299,7 @@ input[type="submit"], input[type="button"], button, .button {
   }
   
   .btn-search {
-    background-color: #ebebeb;
+    background-color: #ebebeb !important;
     border: 0 !important;
     cursor: pointer;
     font-size: 24px;

@@ -212,6 +212,54 @@ input[type="submit"], input[type="button"], button, .button {
     }
 }
 
+// Courses header for courses page
+.courses-header{
+    min-height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+.search {
+    position: relative;
+    height: 50px;
+  }
+  
+  .search .input {
+    background-color: rgba(241, 197, 227, 0.986);
+    border: 0;
+    font-size: 18px;
+    padding: 15px;
+    height: 50px;
+    width: 50px;
+    transition: width 0.3s ease;
+  }
+  
+  .btn {
+    background-color: rgba(241, 197, 227, 0.986);
+    border: 0;
+    cursor: pointer;
+    font-size: 24px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 50px;
+    width: 50px;
+    transform: translateX(298px);
+    transition: transform 0.3s ease;
+  }
+  
+  .btn:focus,
+  .input:focus {
+    outline: none;
+  }
+
 
 // Services or what we do
 a,p,h1,h2,h3,h4,ul {
@@ -322,6 +370,10 @@ a,p,h1,h2,h3,h4,ul {
 	margin-right: 10px;
 	color: $primary;
 }
+
+
+
+
 
 
 // Footer styling

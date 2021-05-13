@@ -223,35 +223,33 @@ input[type="submit"], input[type="button"], button, .button {
     background-position: center;
     background-size: cover;
     background-color: rgba(0, 0, 0, 0.6);
+    background-blend-mode: multiply;
 }
 
 
 .search {
-    position: relative;
-    height: 50px;
+    display: flex;
   }
   
   .search .input {
-    background-color: rgba(241, 197, 227, 0.986);
+    background-color: #eee;
     border: 0;
     font-size: 18px;
     padding: 15px;
     height: 50px;
-    width: 50px;
+  /*   width: 100%; */
     transition: width 0.3s ease;
   }
   
   .btn {
-    background-color: rgba(241, 197, 227, 0.986);
-    border: 0;
+    background-color: #ccc;
+    border: 0 !important;
     cursor: pointer;
     font-size: 24px;
-    position: absolute;
     top: 0;
     left: 0;
     height: 50px;
     width: 50px;
-    transform: translateX(298px);
     transition: transform 0.3s ease;
   }
   
@@ -259,6 +257,26 @@ input[type="submit"], input[type="button"], button, .button {
   .input:focus {
     outline: none;
   }
+
+  .btn:hover{
+      background-color: 
+  }
+
+
+  .courses-content h1 { 
+    margin-bottom: 0 !important;
+    font-size: 3rem;
+    font-weight: bold !important;
+    font-family: inherit !important;
+    color: #fff !important;
+}
+
+.courses-content p {
+    font-size: 1.3rem !important;
+    font-family: inherit;
+    color: #ccc !important;
+    margin: 15px 0 8px 0 !important;
+}
 
 
 // Services or what we do

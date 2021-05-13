@@ -138,7 +138,7 @@
         </div>
         % endif
 
-        <div class="courses${'' if course_discovery_enabled else ' no-course-discovery'}" role="region" aria-label="${_('List of Courses')}">
+        <div class="courses${'' if course_discovery_enabled else ' no-course-discovery'}" role="region" aria-label="${_('List of Courses')}" style="margin-top: 0px !important;">
           <div class="row">
             %for course in courses:
             <div class="col-md-3 col-sm-6">

@@ -29,6 +29,44 @@ from openedx.core.djangolib.markup import HTML, Text
 
 
 <main id="main" aria-label="Content" tabindex="-1">
+    <section>
+      <div class="container">
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="pills-edumoocs-tab" data-bs-toggle="pill" data-bs-target="#pills-edumoocs" type="button" role="tab" aria-controls="pills-edumoocs" aria-selected="true">EduMOOCs</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-skillmoocs-tab" data-bs-toggle="pill" data-bs-target="#pills-skillmoocs" type="button" role="tab" aria-controls="pills-skillmoocs" aria-selected="false">SkillMOOCs</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-techmoocs-tab" data-bs-toggle="pill" data-bs-target="#pills-techmoocs" type="button" role="tab" aria-controls="pills-techmoocs" aria-selected="false">TeachMOOCs
+            </button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link" id="pills-lifemoocs-tab" data-bs-toggle="pill" data-bs-target="#pills-lifemoocs" type="button" role="tab" aria-controls="pills-lifemoocs" aria-selected="false">TeachMOOCs
+            </button>
+          </li>
+        </ul>
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade show active" id="pills-edumoocs" role="tabpanel" aria-labelledby="pills-edumoocs-tab">
+            <h2>EduMOOCs</h2>
+            <p>EduMOOC is targeted for learners wishing to enhance their academic knowledge in different fields of study. These MOOCs are mainly Ramanujan College, University of Delhi extension courses, and are taught with the same rigour as those running on the campus.EduMOOC is focused on students wishing to upgrade their scholarly information in various fields of study. These MOOCs are for the most part Ramanujan College augmentation courses and are educated with a similar thoroughness as those running on the grounds. </p>
+          </div>
+          <div class="tab-pane fade" id="pills-skillmoocs" role="tabpanel" aria-labelledby="pills-skillmoocs-tab">
+            <h2>SkillMOOCs</h2>
+            <p>SkillMOOC viably prepares people in their hands on aptitudes, with an essential spotlight on the proficient turn of events. The students sharpening such abilities are probably going to prevail by increasing a serious edge in their calling.</p>
+          </div>
+          <div class="tab-pane fade" id="pills-techmoocs" role="tabpanel" aria-labelledby="pills-techmoocs-tab">
+            <h2>TeachMOOCs</h2>
+            <p>TeachMOOC is intended for educators the nation over, to upgrade their showing abilities by acquainting them with different instructive procedures. TeachMOOCs are for the most part directed in a cross breed style, where the underlying piece of learning is led on the web, trailed by eye to eye meetings.  </p>
+          </div>
+          <div class="tab-pane fade" id="pills-lifemoocs" role="tabpanel" aria-labelledby="pills-lifemoocs-tab">
+            <h2>LifeMOOCs</h2>
+            <p>LifeMOOC offers courses of brief spans for working experts and others craving to seek after deep-rooted learning. Deep-rooted learning is an excursion that each student looks to embrace. The motivation behind LifeMOOCs is to profit students in hoisting their professions. What's more, these MOOCs likely could be utilized as forerunners to some other space of MOOCs.</p>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="home">  
         <!--
             The whole header wrapper is removed

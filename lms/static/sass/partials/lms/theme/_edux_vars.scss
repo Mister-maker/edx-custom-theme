@@ -39,6 +39,29 @@ body,html{
     }
 }
 
+.nav-link {
+    color: $primary !important;
+    border: 2px solid $primary !important;
+    border-radius: 30px !important;
+    width: 100%;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff !important;
+    background-color: $primary !important;
+    width: 100% !important;
+}
+
+.tab-pane h2{
+    font-size: 2rem !important;
+    font-weight: bold !important;
+    font-family: inherit !important;
+}
+
+.tab-pane p{
+    font-size: 1.1rem !important;
+}
+
 
 .global-header .header-logo a {
     margin-left: 0 !important;

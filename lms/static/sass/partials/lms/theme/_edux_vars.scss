@@ -257,6 +257,7 @@ input[type="submit"], input[type="button"], button, .button {
     display: flex;
     justify-content: center;
     align-items: center;
+    color: $primary !important;
   }
   
   .btn-search:focus,

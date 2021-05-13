@@ -105,7 +105,7 @@
       <p>choose the best course you are truly interested in.</p>
 
       <div class="search">
-        <input type="text" class="input" placeholder="Search Here ..." />
+        <input type="text" class="input" placeholder="Search Here ..." id="search-courses"/>
         <button class="btn-search">
           <i class="fas fa-search"></i>
         </button>
@@ -141,12 +141,34 @@
         <div class="courses${'' if course_discovery_enabled else ' no-course-discovery'}" role="region" aria-label="${_('List of Courses')}" style="margin: 0px !important;">
           <div class="row">
             %for course in courses:
-            <div class="col-md-3 col-sm-6">
+            <div class="col-md-3 col-sm-6 user">
               <%include file="../course.html" args="course=course" />
             </div>
             %endfor
           </div>
         </div>
+
+
+          <!-- new search field -->
+          <script>
+            var searchUsers = document.querySelector('#search-courses'),
+                 users = document.querySelectorAll('.user'),
+                 usersData = document.querySelectorAll('.user-data'),
+                 searchVal;
+
+             searchUsers.addEventListener('keyup', function() {
+               searchVal = this.value.toLowerCase();
+               
+               for (var i = 0; i < users.length; i++) {
+                 if (!searchVal || usersData[i].textContent.toLowerCase().indexOf(searchVal) > -1) {
+                   users[i].style['display'] = 'flex';
+                 }
+                 else {
+                   users[i].style['display'] = 'none';
+                 }
+               }
+             });
+          </script>
 
 
         % if course_discovery_enabled:

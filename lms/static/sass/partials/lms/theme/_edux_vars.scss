@@ -176,6 +176,7 @@ body,html{
         background-color: $primary !important;
         background-image: none !important;
         background-image: none !important;
+        color: #000;
     }
 }
 
@@ -202,6 +203,7 @@ input[type="submit"], input[type="button"], button, .button {
         background-color: $primary !important;
         background-image: none !important;
         background-image: none !important;
+        color: #000;
     }
 
     &:focus{
@@ -210,6 +212,7 @@ input[type="submit"], input[type="button"], button, .button {
         // background-color: darken($primary, 10%) !important;
         background-image: none !important;
         background-image: none !important;
+        color: #000;
     }
 }
 

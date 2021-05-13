@@ -266,7 +266,7 @@ input[type="submit"], input[type="button"], button, .button {
   }
 
   .input:focus{
-      box-shadow: 0 0 5px rgb(28, 221, 247, 0.6) !important;
+      box-shadow: 0 0 5px rgba(28, 221, 247, 0.6) !important;
   }
 
   .btn-search:hover{

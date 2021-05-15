@@ -16,6 +16,10 @@ from openedx.core.djangolib.markup import HTML, Text
     height: 100%;
   }
 
+  .swiper-wrapper{
+    align-items: center !important;
+  }
+
   .swiper-slide {
     text-align: center;
     font-size: 18px;
@@ -69,10 +73,10 @@ from openedx.core.djangolib.markup import HTML, Text
     <div class="swiper-container mySwiper">
       <div class="swiper-wrapper">
         <div class="swiper-slide"><img src="${static.url('images/partner_1.jpg')}" /></div>
-        <div class="swiper-slide"><img src="${static.url('images/partner_2.jpg')}" /></div>
+        <div class="swiper-slide"><img src="${static.url('images/partner_2.jpg')}" style="width: 60%" /></div>
         <div class="swiper-slide"><img src="${static.url('images/partner_3.png')}" /></div>
-        <div class="swiper-slide"><img src="${static.url('images/partner_4.png')}" /></div>
-        <div class="swiper-slide"><img src="${static.url('images/partner_5.jpg')}" /></div>
+        <div class="swiper-slide"><img src="${static.url('images/partner_4.png')}" style="width: 60%" /></div>
+        <div class="swiper-slide"><img src="${static.url('images/partner_5.jpg')}" style="width: 60%" /></div>
       </div>
     </div>
 

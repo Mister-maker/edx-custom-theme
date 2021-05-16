@@ -118,180 +118,31 @@ from openedx.core.djangolib.markup import HTML, Text
 
 
 <section id="our-video">
-  <div id="instructions">
-
-    <video id="my_video_1" class="video-js vjs-default-skin vjs-16-9" width="640px" height="267px">
-    </video>
-  
-    <p>Custom skin for <a href="http://www.videojs.com" target="_blank">video.js</a>. Requires v5.0.0 or higher.</p>
-    
-  
-  </div>
-    
-  <style>
-    #instructions { max-width: 640px; text-align: left; margin: 30px auto; }
-    #instructions textarea { width: 100%; height: 100px; }
-    
-    /* Make the demo a little prettier */
-    body {
-      margin-top: 20px;
-      background: #222;
-      text-align: center; 
-      color: #aaa;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background: radial-gradient(#333, hsl(200,30%,6%) );
-    }
-  
-    a, a:hover, a:visited { color: #76DAFF; }
-  </style>
+  <video
+    id="my-video"
+    class="video-js"
+    controls
+    preload="auto"
+    width="640"
+    height="264"
+    poster="MY_VIDEO_POSTER.jpg"
+    data-setup="{}"
+  >
+    <source src="${static.url('images/video.mp4')}" type="video/mp4" />
+    <source src="MY_VIDEO.webm" type="video/webm" />
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank"
+        >supports HTML5 video</a
+      >
+    </p>
+  </video>
 
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
-  <script src="https://vjs.zencdn.net/5-unsafe/video.js"></script>
+  <script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
   <script>
-    $(function() {
-
-      var insertLevels = function(parent) {
-        var videoDOM = videojs.dom || videojs;
-        for (var i = 1; i <= 10; i++) {
-          var li = videoDOM.createEl(
-            "li",
-            {
-              className: "vjs-volume-level"
-            },
-            {
-              "data-level": i
-            }
-          );
-          parent.appendChild(li);
-        }
-      };
-
-      var lastActiveLevel = 5;
-
-      var setVolume = function(vmb, videoDOM, event) {
-        event.preventDefault();
-        event.stopPropagation();
-        var player1 = videojs.players.my_video_1;
-        debugger;
-        var ulElement = vmb.$(".vjs-volume-levels");
-        var rect = ulElement.getBoundingClientRect();
-        var location = (event.pageX - rect.left) / rect.width * 10;
-        if (location < 0.1) {
-          location = 0;
-        } else {
-          location = Math.round(location);
-        }
-        videoDOM.setAttributes(ulElement, {
-          "data-level": location
-        });
-        if(location == 0){
-          player1.muted(true);
-          return;
-        }
-        lastLevel = location;
-        if(player1.muted()){
-          player1.muted(false);
-        }
-        player1.volume(location/10);
-      };
-
-      var volumechanged = function(event) {
-        event.stopPropagation();
-        event.preventDefault();
-        var player = videojs.players.my_video_1;
-        var volumeLevels = player.$(".vjs-volume-levels");
-        var currentVolumeLevel = volumeLevels.getAttribute("data-level");
-        if(player.muted()) {
-          lastLevel = lastLevel || currentVolumeLevel;
-          volumeLevels.setAttribute("data-level", 0);
-        } else{
-          if(currentVolumeLevel == 0) {
-            volumeLevels.setAttribute("data-level", lastLevel);
-          }
-        }
-      }
-
-      var volumeControl = function(player) {
-        var vmb = player.controlBar.volumeMenuButton;
-        var vmbMenuContent = vmb.$(".vjs-menu-content");
-        var videoDOM = videojs.dom || videojs;
-        videoDOM.emptyEl(vmbMenuContent);
-        var ulContainer = videoDOM.createEl("ul", {
-          className: "vjs-volume-levels"
-        });
-        insertLevels(ulContainer);
-        videoDOM.appendContent(vmbMenuContent, ulContainer);
-        videoDOM.on(vmbMenuContent, "click", setVolume.bind(null, vmb, videoDOM));
-      };
-
-      videojs.hook("setup", volumeControl);
-
-      videojs(
-        "my_video_1",
-        {
-          sources: [
-            {
-              src: "//d2zihajmogu5jn.cloudfront.net/elephantsdream/ed_hd.mp4",
-              type: "video/mp4"
-            }
-          ],
-          controls: true,
-          controlBar: {
-            playToggle: false,
-            captionsButton: false,
-            chaptersButton: false,
-            subtitlesButton: false,
-            captionsButton: false
-          },
-          poster:
-            "https://secure-media2.hotstar.com/r1/thumbs/PCTV/82/3782/PCTV-3782-hsm.jpg"
-        },
-        function() {
-          var lastScrubbedTime = 0;
-          var setup = function(event) {
-            event.preventDefault();
-            event.stopPropagation();
-            event.stopImmediatePropagation();
-            let players = videojs.getPlayers();
-            let player = players[Object.keys(players)[0]];
-            console.log(event.type);
-            if (player.ended()) return;
-            if (player.scrubbing()) {
-              lastScrubbedTime = player.currentTime();
-              return;
-            }
-            if (lastScrubbedTime === player.currentTime()) {
-              lastScrubbedTime = void 0;
-              return;
-            }
-            player.$(".vjs-big-play-button").classList.add("faded");
-            setTimeout(function() {
-              videojs.players.my_video_1
-                .$(".vjs-big-play-button")
-                .classList.remove("faded");
-            }, 1000);
-          };
-
-          var seeked = function(event) {
-            console.log("seeked event fired");
-          };
-          var player1 = videojs.players.my_video_1;
-          player1.addRemoteTextTrack({
-            src: "//d2zihajmogu5jn.cloudfront.net/elephantsdream/captions.en.vtt",
-            kind: "captions",
-            srclang: "en",
-            label: "English",
-            default: true,
-            mode: "showing"
-          });
-          player1.on("pause", setup);
-          player1.on("play", setup);
-          player1.on("seeked", seeked);
-          player1.on("volumechange", volumechanged);
-        }
-      );
-      });
 
   </script>
 </section>

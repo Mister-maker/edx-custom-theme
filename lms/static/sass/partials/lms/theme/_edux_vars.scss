@@ -606,3 +606,405 @@ a {
   padding-left:0
  }
 }
+
+
+
+// Video js
+@charset "UTF-8";
+.vjs-volume-levels[data-level="10"] .vjs-volume-level:nth-child(-n+10), .vjs-volume-levels[data-level="9"] .vjs-volume-level:nth-child(-n+9), .vjs-volume-levels[data-level="8"] .vjs-volume-level:nth-child(-n+8), .vjs-volume-levels[data-level="7"] .vjs-volume-level:nth-child(-n+7), .vjs-volume-levels[data-level="6"] .vjs-volume-level:nth-child(-n+6), .vjs-volume-levels[data-level="5"] .vjs-volume-level:nth-child(-n+5), .vjs-volume-levels[data-level="4"] .vjs-volume-level:nth-child(-n+4), .vjs-volume-levels[data-level="3"] .vjs-volume-level:nth-child(-n+3), .vjs-volume-levels[data-level="2"] .vjs-volume-level:nth-child(-n+2), .vjs-volume-levels[data-level="1"] .vjs-volume-level:nth-child(-n+1) {
+  background-color: #7dbe33;
+}
+
+:focus {
+  outline: none;
+}
+
+.vjs-default-skin .vjs-big-play-button {
+  font-size: 3em;
+  line-height: 1.5em;
+  height: 1.5em;
+  width: 3em;
+  /* 0.06666em = 2px default */
+  border: 0.06666em solid #fff;
+  /* 0.3em = 9px default */
+  border-radius: 0.3em;
+  /* Align center */
+  left: 50%;
+  top: 50%;
+  margin-left: -1.5em;
+  margin-top: -0.75em;
+}
+
+.video-js .vjs-control-bar {
+  background-color: transparent;
+  height: 50px;
+  padding: 10px;
+}
+
+.video-js .vjs-control-text {
+  display: none;
+}
+
+.video-js .vjs-control {
+  height: 30px;
+  width: 3em;
+}
+
+.video-js .vjs-control:focus:before,
+.video-js .vjs-control:hover:before,
+.video-js .vjs-control:focus {
+  text-shadow: none !important;
+}
+
+.video-js .vjs-big-play-button,
+.video-js .vjs-menu-button .vjs-menu-content {
+  /* IE8 - has no alpha support */
+  background-color: #010001;
+  /* Opacity: 1.0 = 100%, 0.0 = 0% */
+  background-color: rgba(1, 0, 1, 0.7);
+}
+
+.video-js .vjs-progress-control {
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 0.3em;
+  bottom: 50px;
+  padding: 0 10px;
+}
+
+/* The slider bar color is used for the progress bar and the volume bar
+   (the first two can be removed after a fix that's coming) */
+.video-js .vjs-play-progress,
+.video-js .vjs-slider-bar {
+  background: #7dbe33;
+}
+
+/* The main progress bar also has a bar that shows how much has been loaded. */
+.video-js .vjs-load-progress {
+  /* For IE8 we'll lighten the color */
+  background: #f2f2f2;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(179, 178, 178, 0.5);
+}
+
+/* The load progress bar also has internal divs that represent
+   smaller disconnected loaded time ranges */
+.video-js .vjs-load-progress div {
+  /* For IE8 we'll lighten the color */
+  background: white;
+  /* Otherwise we'll rely on stacked opacities */
+  background: rgba(179, 178, 178, 0.75);
+}
+
+.lazy-loader-spinner {
+  width: 36px;
+  height: 49px;
+  margin: 0 auto;
+  color: #8bbb4b;
+  margin-top: 35px;
+}
+
+.vjs-loading-spinner:after {
+  content: none;
+}
+
+.vjs-loading-spinner {
+  border: none;
+  width: 35px;
+  height: 35px;
+}
+
+.vjs-seeking .vjs-loading-spinner::before,
+.vjs-seeking .vjs-loading-spinner::after,
+.vjs-waiting .vjs-loading-spinner::before,
+.vjs-waiting .vjs-loading-spinner::after {
+  border-radius: 50%;
+  border: 6px solid transparent;
+  border-color: transparent;
+  border-top-color: #eee;
+  -webkit-animation: lazy-loader 1.4s infinite linear;
+  animation: lazy-loader 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
+}
+
+@-webkit-keyframes lazy-loader {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes lazy-loader {
+  0% {
+    -webkit-transform: rotate(0);
+    transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.vjs-icon-fullscreen-exit,
+.video-js.vjs-fullscreen .vjs-fullscreen-control {
+  font-family: FontAwesome;
+}
+
+.video-js .vjs-fullscreen-control {
+  font-family: FontAwesome;
+  order: 10;
+}
+
+.vjs-icon-fullscreen-enter,
+.video-js .vjs-fullscreen-control .vjs-icon-placeholder,
+.vjs-icon-fullscreen-exit,
+.video-js.vjs-fullscreen .vjs-fullscreen-control .vjs-icon-placeholder {
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.vjs-icon-fullscreen-enter:before,
+.video-js .vjs-fullscreen-control:before {
+  content: "";
+  font-size: 1.4em;
+  top: 4px;
+}
+
+.vjs-icon-fullscreen-exit:before,
+.video-js.vjs-fullscreen .vjs-fullscreen-control:before {
+  content: "";
+  font-size: 1.4em;
+  top: 4px;
+}
+
+.video-js.vjs-has-started.vjs-paused .vjs-big-play-button:before {
+  content: "";
+}
+
+@-webkit-keyframes fadeinout {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+  }
+  12% {
+    opacity: 0.12;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+  }
+  25% {
+    opacity: 0.25;
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  75% {
+    opacity: 0.25;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+}
+@keyframes fadeinout {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+  }
+  12% {
+    opacity: 0.12;
+    transform: scale(0.8);
+    -webkit-transform: scale(0.8);
+  }
+  25% {
+    opacity: 0.25;
+    transform: scale(0.9);
+    -webkit-transform: scale(0.9);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+  75% {
+    opacity: 0.25;
+    transform: scale(1.1);
+    -webkit-transform: scale(1.1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+  }
+}
+.video-js {
+  font-size: 14px;
+  color: #fff;
+}
+.video-js *, .video-js:after, .video-js:before {
+  box-sizing: inherit;
+  font-size: inherit;
+  color: inherit;
+  line-height: inherit;
+}
+.video-js .vjs-big-play-button {
+  top: 50%;
+  left: 50%;
+  margin-left: -1em;
+  margin-top: -1.5em;
+  width: 2em;
+  height: 2em;
+  line-height: 2em;
+  border: 5px solid #fff;
+  border-radius: 50%;
+  font-size: 3.5em;
+  background-color: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  -webkit-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -moz-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -ms-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  -o-transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+  transition: border-color 0.4s, outline 0.4s, background-color 0.4s;
+}
+.video-js .vjs-big-play-button:before {
+  transform: translateY(-0.1em);
+  content: "";
+}
+.video-js .vjs-big-play-button.faded {
+  display: block;
+  -webkit-animation: fadeinout 1s linear forwards;
+  animation: fadeinout 1s linear forwards;
+}
+.video-js .vjs-slider {
+  background-color: #1f1f1f;
+}
+.video-js .vjs-spacer {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+}
+.video-js.vjs-seeking:after {
+  content: " ";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  opacity: 0.5;
+  z-index: 20000;
+  pointer-events: none;
+}
+.video-js.vjs-seeking .vjs-control-bar {
+  opacity: 0;
+}
+.video-js.vjs-has-started.vjs-paused.vjs-user-inactive .vjs-control-bar {
+  opacity: 0;
+}
+.video-js.vjs-has-started.vjs-user-active .vjs-text-track-display {
+  bottom: 35px;
+}
+.video-js.vjs-has-started .vjs-text-track-display div {
+  font-size: 18px !important;
+  background-color: transparent !important;
+  color: #fff !important;
+}
+.video-js .vjs-time-control {
+  -webkit-box-flex: 0 1 auto;
+  -moz-box-flex: 0 1 auto;
+  -webkit-flex: 0 1 auto;
+  -ms-flex: 0 1 auto;
+  flex: 0 1 auto;
+  width: auto;
+  padding: 0;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.video-js .vjs-time-control .vjs-current-time-display {
+  text-align: right;
+  width: 100%;
+}
+.video-js .vjs-time-control .vjs-duration-display {
+  text-align: left;
+  width: 100%;
+}
+.video-js .vjs-time-control.vjs-time-divider {
+  min-width: 10px;
+  height: 30px;
+}
+.video-js .vjs-time-control.vjs-current-time {
+  margin-right: 5px;
+}
+.video-js .vjs-current-time {
+  width: 3em;
+}
+.video-js .vjs-volume-menu-button {
+  order: 1;
+  margin-right: 5px;
+}
+.video-js .vjs-volume-menu-button.vjs-menu-button-inline:hover, .video-js .vjs-volume-menu-button.vjs-menu-button-inline:focus {
+  width: 9em;
+}
+.video-js .vjs-volume-menu-button.vjs-volume-menu-button-horizontal:hover .vjs-menu-content, .video-js .vjs-volume-menu-button.vjs-volume-menu-button-horizontal:focus .vjs-menu-content {
+  width: 5em;
+}
+.video-js .vjs-volume-menu-button .vjs-volume-levels {
+  width: 100%;
+  height: 10px;
+  display: flex;
+  cursor: pointer;
+  justify-content: stretch;
+  align-items: stretch;
+  padding: 0px;
+  margin: 14px 0;
+}
+.video-js .vjs-volume-menu-button .vjs-volume-level {
+  position: static;
+  margin-left: 2px;
+  width: 5px;
+  display: inline-block;
+  height: 100%;
+  background-color: #efefef;
+}
+
+.video-js .vjs-remaining-time,
+.video-js .vjs-volume-level:after,
+.video-js .vjs-volume-level:before,
+.video-js.vjs-live .vjs-time-control.vjs-current-time,
+.video-js.vjs-live .vjs-time-control.vjs-duration,
+.video-js.vjs-live .vjs-time-control.vjs-time-divider,
+.video-js.vjs-no-flex .vjs-time-control.vjs-remaining-time {
+  display: none;
+}
+
+.video-js.vjs-no-flex .vjs-time-control {
+  display: flex;
+  width: 4em;
+}
+
+// End of video js

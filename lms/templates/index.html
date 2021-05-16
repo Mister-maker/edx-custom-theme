@@ -115,6 +115,44 @@ from openedx.core.djangolib.markup import HTML, Text
   </div>
 </section>
 
+
+<section id="our-video">
+  <div style='max-width: 800px; position: relative; margin: 0 auto; margin-top: 0px; margin-top: 64px;'>
+    <video id="example" poster="https://ia800603.us.archive.org/30/items/Tears-of-Steel/tos-poster.jpg">
+      <track kind="captions" label="Portuguese" srclang="pt" src="https://raw.githubusercontent.com/BMSVieira/moovie.js/main/demo-template/subtitles/pt.vtt">
+      <track kind="captions" label="English" srclang="en" src="https://raw.githubusercontent.com/BMSVieira/moovie.js/main/demo-template/subtitles/en.vtt">
+      <track kind="captions" label="French" srclang="en" src="https://raw.githubusercontent.com/BMSVieira/moovie.js/main/demo-template/subtitles/french.srt">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/gh/BMSVieira/moovie.js/js/moovie.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/2.4.0/shaka-player.compiled.js"></script>
+  <script>
+    var demo = new Moovie({
+        selector: "#example",
+        icons: {
+            path: "https://raw.githubusercontent.com/BMSVieira/moovie.js/main/icons/"
+        }
+    });
+            
+    // Get new generated player DOM element
+    var videoElement = demo.video;
+    const source = 'https://demo.unified-streaming.com/video/tears-of-steel/tears-of-steel-en.ism/.mpd';
+
+    // Shaka
+    if (shaka.Player.isBrowserSupported()) {
+      shaka.polyfill.installAll();
+      const shakaInstance = new shaka.Player(videoElement);
+      shakaInstance.load(source);
+    } else {
+      console.warn('Browser is not supported!');
+    }
+  </script>
+</section>
+
+
 <section class="mt-5" id="about-our-courses">
   <div class="container">
     <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">

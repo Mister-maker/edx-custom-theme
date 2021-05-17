@@ -1,4 +1,4 @@
-<!-- ## mako
+## mako
 <%page expression_filter="h"/>
 <%!
   from django.urls import reverse
@@ -7,20 +7,9 @@
   from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
 %>
 <% footer = get_footer(is_secure=is_secure) %>
-<%namespace name='static' file='static_content.html'/> -->
-
-## mako
 <%namespace name='static' file='static_content.html'/>
-<%!
-from django.urls import reverse
-from django.utils.translation import ugettext as _
-from django.conf import settings
 
-from datetime import datetime
-import pytz
 
-from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
-%>
 
 
 <!-- <div class="footer-clean border">
@@ -70,7 +59,7 @@ from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_en
                   <a href="">Home</a>
                 </li>
                 <li>
-                  <a href="${marketing_link('ABOUT')}}">${_("About")}</a>
+                  <a href="#">${_("About")}</a>
                 </li>
                 <li>
                   <a href="${marketing_link('COURSES')}">Our Courses</a>
@@ -105,7 +94,7 @@ from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_en
               <h4 class="footer-widget-title">Help Support</h4>
               <ul>
                 <li>
-                  <a href="${marketing_link('FAQ')}">${_("FAQ")}</a>
+                  <a href="#">${_("FAQ")}</a>
                 </li>
                
               </ul>

@@ -4,13 +4,56 @@
 
 <%block name="pagetitle">${_("About")}</%block>
 
+<div class="container-fluid courses-header">
+    <div class="courses-content text-center">
+        <h1 class="mb-4 fw-bold text-white">ABOUT US</h1>
+        <h5 class="mb-2 text-light">We are research and development cell of Ramanujan College.</h5>
+    </div>
+</div>
+
 <main id="main" aria-label="Content" tabindex="-1">
     <section class="container about">
-        <h1>
-            <%block name="pageheader">${page_header or _("About")}</%block>
-        </h1>
-        <p>
-            <%block name="pagecontent">${page_content or _("This page left intentionally blank. Feel free to add your own content.")}</%block>
-        </p>
+        <div class="heading text-center"> 
+            <h1>Our Team</h1>
+            <p>We develop RCMOOCS.</p>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <ul>
+                    <li><strong>Our Director:</strong></li>
+                    <li>Prof. S.P. Aggrawal (Ramanujan College)</li>
+                    <li>Dr. Nikhil Rajput (Ramanujan College)</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li><strong>Our Assistant Director:</strong></li>
+                    <li>Mr. Vipin Rathi</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="heading">
+                <h1>Our Support Team</h1>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Dr. Ashish Kumar Shukla</li>
+                    <li>Mrs. Shipra Yadav</li>
+                    <li>Dr. Sachin Tomar</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <ul>
+                    <li>Mr. Rahul Prasad</li>
+                    <li>Mr. Vishal Bhardwaj</li>
+                    <li>Mr. Shubham Karala</li>
+                    <li>Mr. Mohit Aggarwal</li>
+                </ul>
+            </div>
+        </div>
+       
+        
     </section>
 </main>

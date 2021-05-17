@@ -1,4 +1,4 @@
-## mako
+<!-- ## mako
 <%page expression_filter="h"/>
 <%!
   from django.urls import reverse
@@ -7,7 +7,20 @@
   from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
 %>
 <% footer = get_footer(is_secure=is_secure) %>
+<%namespace name='static' file='static_content.html'/> -->
+
+## mako
 <%namespace name='static' file='static_content.html'/>
+<%!
+from django.urls import reverse
+from django.utils.translation import ugettext as _
+from django.conf import settings
+
+from datetime import datetime
+import pytz
+
+from openedx.core.djangoapps.lang_pref.api import footer_language_selector_is_enabled
+%>
 
 
 <!-- <div class="footer-clean border">
